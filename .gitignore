@@ -1,0 +1,19 @@
+.env
+.env*.local
+node_modules
+
+# Next.js build output and caches — not source, regenerated on every build/deploy
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Vercel CLI project link (local machine's project/org id, not a secret but not source either)
+.vercel
+
+# Local agent-tooling state (session logs, audit trails) — not project source
+.bkit/
+.claude/
+
+# Added defensively: trash/ may hold moved files (e.g. accidental secret copies)
+trash/

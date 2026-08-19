@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* Editorial/institutional palette per DESIGN.md and prd_lite.md §5. This is a
+   fixed visual identity, not a light/dark toggle, so no dark-mode variant. */
+:root {
+  --background: #faf6ee; /* warm ivory */
+  --foreground: #1c2b45; /* deep navy */
+  --sage: #8ca292;
+  --gray: #9c9992;
+  --gold: #b7935a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-navy: var(--foreground);
+  --color-sage: var(--sage);
+  --color-gray: var(--gray);
+  --color-gold: var(--gold);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  /* Editorial serif for reading content (masthead, answers, citations) —
+     applied selectively via the `font-serif` utility, not globally. */
+  --font-serif: var(--font-source-serif);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  /* CHECK.md item 13: DESIGN.md asserts a ~1024px desktop-first minimum but
+     nothing enforced it, so a narrower window silently squished/overlapped
+     the layout. This app is deliberately not mobile-optimized (CLAUDE.md),
+     so the fix isn't a responsive redesign — it's letting the browser scroll
+     horizontally below 1024px instead of breaking the layout in place. */
+  min-width: 1024px;
+}
