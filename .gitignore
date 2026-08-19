@@ -17,3 +17,6 @@ next-env.d.ts
 
 # Added defensively: trash/ may hold moved files (e.g. accidental secret copies)
 trash/
+
+.vercel
+.env*
